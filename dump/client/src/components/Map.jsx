@@ -1,7 +1,9 @@
 import React from 'react';
-import GOOGLE_MAPS_API_KEY from './../../../../config.js'
-import mapStyles from './mapStyles'
-import { GoogleMap, useLoadScript, Marker } from '@react-google-maps/api'
+import GOOGLE_MAPS_API_KEY from './../../../../config.js';
+import mapStyles from './mapStyles';
+import { GoogleMap, useLoadScript, Marker } from '@react-google-maps/api';
+import Search from './Search.jsx';
+
 
 const libraries = ["places"];
 const mapContainerStyle = {
@@ -10,7 +12,7 @@ const mapContainerStyle = {
 }
 const options = {
   disableDefaultUI: true,
-  styles: mapStyles,
+  // styles: mapStyles,
   zoomControl: true,
 }
 
@@ -50,6 +52,12 @@ const clickOnMap = (event) =>{
 
 return(
   <div>
+    <Search places={libraries} isLoader={isLoaded} />
+    <h2>
+    <span role="img" aria-label="poop">
+      :poop
+    </span>
+  </h2>
     <GoogleMap
     mapContainerStyle={mapContainerStyle}
     zoom={8}
@@ -63,7 +71,6 @@ return(
     </GoogleMap>
   </div>
 )
-
 }
 
 export default Map;

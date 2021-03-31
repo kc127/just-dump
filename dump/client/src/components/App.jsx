@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+// import Search from './Search.jsx';
 import Map from './Map.jsx';
 
 
@@ -32,7 +33,6 @@ class App extends React.Component {
       <div>
         {/* <Search /> */}
         <Map saveMarker={this.saveMarker} />
-
       </div>
     )
   }
