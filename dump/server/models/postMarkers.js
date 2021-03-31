@@ -1,22 +1,25 @@
 const mongoose = require('mongoose');
+const db = require('../db/index.js')
 
-let markerSchema = mongoose.Schema({
-  lat: Number,
-  lng: Number,
-  time: Number
-});
+  let MarkerSchema = mongoose.Schema({
+    lat: {type: Number, required: true},
+    lng: {type: Number, required: true},
+    time: {type: String, required: true},
+  });
 
-let Markers = mongoose.model('markers', markerSchema);
+  /* compile schema to model */
+  var Marker = mongoose.model('markers', MarkerSchema);
 
-let save = (marker, callback) => {
-  const markerDoc = new Markers(marker);
+  const saveMarker = (marker, callback) => {
+  /* a doc instance */
+  const markerDoc = new Marker(marker);
   markerDoc.save((err, doc) => {
     if (err) {
-      console.log('error adding marker to mongo');
-      return;
+      callback(err, null);
+    } else {
+      callback(null, doc);
     }
-    console.log('document inserted successfully');
   })
 }
 
-module.exports = { save }
+module.exports = { saveMarker }

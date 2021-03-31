@@ -13,8 +13,11 @@ class App extends React.Component {
     this.saveMarker = this.saveMarker.bind(this);
   }
 
+  componentDidMount(){
+    this.saveMarker();
+  }
+
   saveMarker(marker) {
-    console.log("clicked", marker)
     axios.post('/markers', marker)
     .then((res) => {
       console.log('restroom location successfully saved to database');
@@ -27,12 +30,9 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <h2>
-          <span role="img" aria-label="poop">
-            :poop
-          </span>
-        </h2>
+        {/* <Search /> */}
         <Map saveMarker={this.saveMarker} />
+
       </div>
     )
   }

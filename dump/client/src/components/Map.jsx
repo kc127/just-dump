@@ -1,7 +1,7 @@
 import React from 'react';
 import GOOGLE_MAPS_API_KEY from './../../../../config.js'
 import mapStyles from './mapStyles'
-import { GoogleMap, useLoadScript } from '@react-google-maps/api'
+import { GoogleMap, useLoadScript, Marker } from '@react-google-maps/api'
 
 const libraries = ["places"];
 const mapContainerStyle = {
@@ -43,14 +43,11 @@ const clickOnMap = (event) =>{
     lng: event.latLng.lng(),
     time: new Date()
   };
-  console.log(event);
-
   setMarkers((currentMarkers) => [
     ...currentMarkers, marker])
   props.saveMarker(marker);
 }
 
-console.log(markers);
 return(
   <div>
     <GoogleMap
@@ -59,6 +56,10 @@ return(
     center={center}
     options = {options}
     onClick={clickOnMap}>
+      {markers.map((marker) => (
+        <Marker key={marker.lat} position={{lat: marker.lat, lng: marker.lng}}
+         />
+      ))}
     </GoogleMap>
   </div>
 )
