@@ -1,0 +1,68 @@
+import React from 'react';
+import GOOGLE_MAPS_API_KEY from './../../../../config.js'
+import mapStyles from './mapStyles'
+import { GoogleMap, useLoadScript } from '@react-google-maps/api'
+
+const libraries = ["places"];
+const mapContainerStyle = {
+  width: "100vw",
+  height: "100vh"
+}
+const options = {
+  disableDefaultUI: true,
+  styles: mapStyles,
+  zoomControl: true,
+}
+
+const center = {
+  lat: 33.7490,
+  lng: -84.3880,
+}
+
+const Map = (props) => {
+
+const [markers, setMarkers] = React.useState([]);
+
+const { isLoaded, loadError } = useLoadScript({
+  googleMapsApiKey: GOOGLE_MAPS_API_KEY,
+  libraries,
+})
+
+if(loadError) {
+  return "Error loading maps";
+}
+if(!isLoaded) {
+  return "Loading Maps";
+}
+
+
+
+const clickOnMap = (event) =>{
+  const marker = {
+    lat: event.latLng.lat(),
+    lng: event.latLng.lng(),
+    time: new Date()
+  };
+  console.log(event);
+
+  setMarkers((currentMarkers) => [
+    ...currentMarkers, marker])
+  props.saveMarker(marker);
+}
+
+console.log(markers);
+return(
+  <div>
+    <GoogleMap
+    mapContainerStyle={mapContainerStyle}
+    zoom={8}
+    center={center}
+    options = {options}
+    onClick={clickOnMap}>
+    </GoogleMap>
+  </div>
+)
+
+}
+
+export default Map;

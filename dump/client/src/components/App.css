@@ -1,0 +1,11 @@
+body {
+  margin: 0;
+}
+
+h2 {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 10;
+}
+
