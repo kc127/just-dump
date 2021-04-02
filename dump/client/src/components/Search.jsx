@@ -9,54 +9,41 @@ import {
 } from "@reach/combobox";
 
 
-const Search = ({ places, isLoaded }) => {
+const Search = ({ places, zoomIn }) => {
 
   const libraries = places;
 
   /* default location is Atlanta */
   const getLat = () => 33.7490;
   const getLng = () => -84.3880;
+
   const { ready, value, suggestions: { status, data }, setValue, clearSuggestions, } = usePlacesAutoComplete({
     requestOptions: {
       location: {
         lat: getLat,
         lng: getLng
       },
-      radius: 500000
+      radius: 90 * 1000,
     }
   })
 
 
-  const mapRef = React.useRef();
-  const zoomIn = ({ lat, lng }) => {
-    mapRef.current.zoomIn({ lat, lng });
-    mapRef.current.setZoom()
-  }
+  const handleChange = (event) => setValue(event.target.value);
 
-  const handleChange =(event) => setValue(event.target.value);
-
-  const handleSelect = ({ description }) => {
-    //console.log(address)
-    setValue(description, false);
+  const handleSelect = async (address) => {
+    setValue(address, false);
     clearSuggestions();
 
-    getGeocode({ address: description })
-    .then((results) => getLatLng(results[0]))
-    .then(({ lat, lng }) => {
-      console.log(" coordinates: ", { lat, lng })
-    })
-    .catch((error) => {
-      console.log("error:", error);
-    })
-
-  }
-
-  const renderSuggestions = () =>
-    data.map(({ place_id, description }) => {
-      return (
-        <ComboboxOption key={place_id} value={description} />
-      );
-    });
+    getGeocode({ address })
+      .then((results) => getLatLng(results[0]))
+      .then(({ lat, lng }) => {
+        zoomIn({ lat, lng })
+        console.log(" coordinates: ", { lat, lng })
+      })
+      .catch((error) => {
+        console.log("error:", error);
+      })
+  };
 
   return (
     <div className="search">
@@ -64,7 +51,9 @@ const Search = ({ places, isLoaded }) => {
         <ComboboxInput value={value} placeholder="Where's the bathroom" onChange={handleChange} disabled={!ready} />
         <ComboboxPopover>
           <ComboboxList>
-            {status === "OK" && renderSuggestions()}
+            {status === "OK" && data.map(({ place_id, description }) =>
+              <ComboboxOption key={place_id} value={description} />)
+            }
           </ComboboxList>
         </ComboboxPopover>
       </Combobox>

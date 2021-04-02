@@ -1,23 +1,65 @@
 body {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-h2 {
+.main{
+  display:flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: 100%;
+  padding-right: 50px;
+  /* grid-template-columns: 3fr 1fr;
+  grid-template-areas: "a a a"
+                       "d d b"
+                       "c c c" */
+}
+
+.logo {
   position: absolute;
-  top: 1rem;
-  left: 1rem;
+  top: 50px;
+  left:200px;
+  font-size: 200px;
+}
+
+.sidebar {
+  padding-top:35px;
+  box-sizing: border-box;
+  cursor: cursor;
+  text-transform: uppercase;
+  font-size: 24px;
+  font-weight: 700px;
+  letter-spacing: 2px;
+  justify-self: space-around;
+
+}
+
+.justdump {
+  position: absolute;
+  top: 0;
+  left: 0;
   z-index: 10;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: 700px;
+  letter-spacing: 2px;
+}
+
+.googleMaps {
+  box-sizing: content-box;
+  padding: 10px;
+  padding-top: 40px;
 }
 
 .search {
   position: absolute;
   top: 1rem;
-  left: 20%;
-  transform: translateX(-50%);
+  left: 50%;
+  transform: translateX(-57%);
   width: 100%;
-  max-width: 200px;
+  max-width: 500px;
   z-index: 10;
-
 }
 
 .search input {
@@ -25,5 +67,139 @@ h2 {
   font-size: 1.5rem;
   width: 100%;
   outline: none;
+  text-transform: uppercase;
+  font-size: 10px;
+  font-weight: 700px;
+  letter-spacing: 2px;
 }
 
+.currLoc {
+  position: absolute;
+  top:10px;
+  right: 2px;
+}
+
+.box {
+  display: flex;
+  /* grid-template-columns: repeat(auto-fill, minmax(70px, 1fr, 1fr)); */
+  /* border: 1px solid#ebedee; */
+  flex-direction: row;
+  justify-content: center;
+  border-left: 1px solid #ebedee;
+  box-sizing: border-box;
+  grid-gap: 20px;
+  padding-left: 20px;
+}
+
+.smallBox {
+  background-color: white;
+  border: 1px solid#ebedee;
+  border-left: none;
+  align-items: center;
+  box-sizing: border-box;
+  height: 150px;
+  font-size: 13px;
+  margin-bottom: -1px;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  letter-spacing: 0.2px;
+  border-color: #ebedee;
+  outline: none;
+  width: 200px;
+  /* font-weight: 700; */
+}
+
+.icons {
+  size: 50;
+}
+
+.smallBox:hover {
+  background: black;
+  color: white;
+  border-color: #ebedee;
+}
+
+.browserestrooms {
+  text-align: center;
+  padding-top: 18px;
+  padding-bottom: 20px;
+}
+
+.homepage {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  justify-content: space-between;
+  /* margin-bottom: 20px; */
+  text-transform: uppercase;
+  font-size: 15px;
+  font-weight: 700px;
+  letter-spacing: 0.5px;
+}
+
+.homepage:hover {
+  border-color: #ebedee;
+}
+
+.iconsearch {
+  display: flex;
+  flex-direction: row;
+}
+
+
+.restrooms h3{
+  font-weight: 100;
+  font-size: 25px;
+  color: #484848;
+  margin: 0 0 35px 5px;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: 700px;
+  letter-spacing: 2px;
+}
+.bathrooms{
+  height: 680px;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: block;
+}
+.img-large{
+  width: 460px;
+  height: 310px;
+  float: left;
+  margin: 0 5px 10px 5px;
+}
+.img-large img{
+  width: 460px;
+  height: 310px;
+  display: block;
+}
+.img-short{
+  width: 225px;
+  height: 150px;
+  float: left;
+  margin: 0 5px 10px 5px;
+}
+.img-short:last-child{
+  margin-top: -160px;
+}
+.img-short img{
+  width: 225px;
+  height: 150px;
+  display: block;
+}
+.eachrestroom{
+  margin: -30px 0 0 20px;
+  color: #fff;
+  font-size: 18px;
+}
+
+.review {
+  display: flex;
+  flex-direction: column;
+}

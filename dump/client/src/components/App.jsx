@@ -1,7 +1,10 @@
 import React from 'react';
 import axios from 'axios';
-// import Search from './Search.jsx';
 import Map from './Map.jsx';
+import LiveMap from './LiveMap.jsx';
+import Sidebar from './Sidebar.jsx';
+import Gallery from './Gallery.jsx';
+import CustomMap from './CustomMap.jsx';
 
 
 class App extends React.Component {
@@ -9,9 +12,14 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      markers: []
+      markers: [],
+      liveMap: false,
+      hasStatus: false,
+      status: ""
     }
     this.saveMarker = this.saveMarker.bind(this);
+    this.renderLiveMap = this.renderLiveMap.bind(this)
+    this.getStatus = this.getStatus.bind(this);
   }
 
   componentDidMount(){
@@ -28,13 +36,27 @@ class App extends React.Component {
     })
   }
 
+  renderLiveMap(){
+    this.setState({
+      liveMap: !this.state.liveMap
+    })
+  }
+
+  getStatus(status){
+    this.setState({
+      hasStatus: !this.state.hasStatus,
+      status: status
+    })
+  }
+
   render() {
-    return (
-      <div>
-        {/* <Search /> */}
-        <Map saveMarker={this.saveMarker} />
-      </div>
-    )
+      return (
+        <div className="main">
+          <Sidebar getStatus={this.getStatus}/>
+          <div className="nav"></div>
+          <Map />
+        </div>
+      )
   }
 }
 
