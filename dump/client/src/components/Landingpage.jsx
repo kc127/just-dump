@@ -30,7 +30,7 @@ class LandingPage extends React.Component {
       return (
         <div>
           <div className="logo">
-            JUST DUMP<GrRestroom className="icons" size={30} onClick={this.nextPage} />
+          <GrRestroom className="icons" size={30} onClick={this.nextPage} />JUST DUMP
           </div>
           <Gallery />
         </div>

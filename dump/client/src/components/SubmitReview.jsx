@@ -74,9 +74,17 @@ class SubmitReview extends React.Component {
           <option value="more than 15 minutes">More than 15 minutes</option>
           <option value="two hours">2 hours</option>
         </select>
+        </div>
+        <div className="options">
+        <label>Who can use this bathroom?</label>
+        <select className="cleanliness" name="time" value={this.state.category} onChange={this.handleChange}>
+          <option selected value="everyone">Everyone</option>
+          <option value="men">Men</option>
+          <option value="women">Women</option>
+        </select>
+        </div>
         <div className="options">
         <textarea name="comments" value={this.state.comments} onChange={this.handleChange}>Leave any comments</textarea>
-        </div>
         </div>
         <button>Done</button>
         </form>

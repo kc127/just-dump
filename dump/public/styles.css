@@ -77,6 +77,77 @@ body {
   position: absolute;
   top:10px;
   right: 2px;
+  background-color: white;
+  border: 1px solid#ebedee;
+  /* border-left: none; */
+  align-items: center;
+  box-sizing: border-box;
+  height: 40px;
+  font-size: 13px;
+  margin-bottom: -1px;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  letter-spacing: 0.2px;
+  border-color: #ebedee;
+  outline: none;
+}
+
+.currLoc:hover {
+  background: black;
+  color: white;
+  border-color: #ebedee;
+}
+
+.submitBtn {
+  background-color: white;
+  border: 1px solid#ebedee;
+  /* border-left: none; */
+  align-items: center;
+  box-sizing: border-box;
+  height: 40px;
+  font-size: 13px;
+  margin-bottom: -1px;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  letter-spacing: 0.2px;
+  border-color: #ebedee;
+  outline: none;
+}
+
+.changetheme {
+  background-color: white;
+  border: 1px solid#ebedee;
+  /* border-left: none; */
+  align-items: center;
+  box-sizing: border-box;
+  height: 40px;
+  font-size: 13px;
+  margin-bottom: -1px;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  letter-spacing: 0.2px;
+  border-color: #ebedee;
+  outline: none;
+}
+
+.changetheme:hover {
+  background: black;
+  color: white;
+  border-color: #ebedee;
+}
+
+.submitBtn:hover {
+  background: black;
+  color: white;
+  border-color: #ebedee;
+}
+
+.questions {
+  display: flex;
+  flex-direction: column;
 }
 
 .box {

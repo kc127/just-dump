@@ -5,7 +5,8 @@ const db = require('../db/index.js')
     cleanliness: {type: String, required: true},
     recommend: {type: String, required: true},
     time: {type: String, required: true},
-    comments: {type: String, require: true}
+    comments: {type: String, require: true},
+    category: {type: String, require: true}
   });
 
   /* compile schema to model */

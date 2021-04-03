@@ -12,6 +12,7 @@ import LiveMap from './LiveMap.jsx';
 import CustomMap from './CustomMap.jsx';
 import locations from './locations.js';
 import mensRestrooms from './mensRestrooms.js';
+import PopUp from './PopUp.jsx';
 
 const libraries = ["places"];
 const containerStyle = {
@@ -103,7 +104,7 @@ class Map extends React.Component {
               </div>
             </div>
 
-            <CurrentLocation zoomIn={this.zoomIn} />
+            <PopUp zoomIn={this.zoomIn} />
             <GoogleMap
               id="map"
               mapContainerStyle={containerStyle}

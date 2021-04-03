@@ -1,4 +1,6 @@
 import React from 'react';
+import Modal from 'react-modal';
+import ReactDOM from 'react-dom';
 
 class Form1 extends React.Component {
   constructor(props){
@@ -8,7 +10,7 @@ class Form1 extends React.Component {
       continue: false,
       placeLocation: ""
     }
-    
+
     this.handleChange = this.handleChange.bind(this);
     this.nextPage = this.nextPage.bind(this);
   }
@@ -33,12 +35,36 @@ class Form1 extends React.Component {
       )
     } else {
       return(
+
         <div className="host-form">
-          <h2>Let's get started listing your bathroom</h2>
+        <button onClick={openModal}>Open Modal</button>
+        <Modal
+          isOpen={modalIsOpen}
+          onAfterOpen={afterOpenModal}
+          onRequestClose={closeModal}
+          style={customStyles}
+          contentLabel="Let's get started listing your bathroom"
+        >
+
+          <h2 ref={_subtitle => (subtitle = _subtitle)}>Let's get started listing your bathroom</h2>
+          <button onClick={closeModal}>close</button>
+          <div>I am a modal</div>
+
           <label>Where is your place located </label>
           <input type="text" name="placeLocation" value={this.state.placeLocation} onChange={this.handleChange}></input>
           <button onClick={this.nextPage} type="submit">Next</button>
-        </div>
+
+        </Modal>
+      </div>
+
+
+
+        // <div className="host-form">
+        //   <h2>Let's get started listing your bathroom</h2>
+        //   <label>Where is your place located </label>
+        //   <input type="text" name="placeLocation" value={this.state.placeLocation} onChange={this.handleChange}></input>
+        //   <button onClick={this.nextPage} type="submit">Next</button>
+        // </div>
       )
     }
   }
