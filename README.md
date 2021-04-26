@@ -1,4 +1,7 @@
 ## Just Dump
+
+![GitHub last commit](https://img.shields.io/github/last-commit/kc127/just-dump) ![GitHub top language](https://img.shields.io/github/languages/top/kc127/just-dump)
+
 ![first_page](./assets/thirdpage.png)
 ### About
 *Just Dump* is a web app that allows users to easily find public restrooms near them. My main motivation for developing this app was to make sure everybody has equal access to public restrooms.
