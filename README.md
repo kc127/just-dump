@@ -1,5 +1,5 @@
 ## Just Dump
-
+![first_page](./assets/thirdpage.png)
 ### About
 *Just Dump* is a web app that allows users to easily find public restrooms near them. My main motivation for developing this app was to make sure everybody, including members of transgender community, have equal access to public restrooms.
 
@@ -24,5 +24,5 @@ Keys APIs used:
 ### Future Scope
 
 * Users should easily be able to filter restrooms based on their preference
-* Users should be able to 
+* Users should be able to
 
