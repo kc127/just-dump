@@ -10,6 +10,10 @@
 <img src="./assets/mernstack.png" alt="drawing" width="200"/>
 
 
+NPM Packages used:
+* @react-google-maps/api
+* use-places-autocomplete
+
 Keys APIs used:
 * Geocoding API
 * Maps Javascript API
@@ -27,8 +31,8 @@ Keys APIs used:
 * After cloning this repo, run ```npm install``` from within the root directory of this project.
 * Please create a Google Map API Key, and ensure that the two services below are enabled. Create a file in the root directory called ```config.js```. Copy and paste the following code into the newly created file:
 
-         var GOOGLE_MAPS_API_KEY = <YOUR GOOGLE MAP API KEY>;
-         export default GOOGLE_MAPS_API_KEY;
+             var GOOGLE_MAPS_API_KEY = <YOUR GOOGLE MAP API KEY>;
+             export default GOOGLE_MAPS_API_KEY;
 
 * Run ```npm react-dev``` to bundle webpack which watches for code changes automatically for you.
 
