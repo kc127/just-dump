@@ -20,7 +20,8 @@ Keys APIs used:
 
 ### User Story
 * User should be able to search for a bathroom using the search bar.
-* User should be able to
+* User should be able to mark a location once they use a restroom at that location.
+* User should be able to click on a marker and leave a feedback once they use a public restroom at a specific location
 
 ### Project Setup
 * After cloning this repo, run ```npm install``` from within the root directory of this project.
