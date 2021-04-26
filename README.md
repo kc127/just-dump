@@ -17,7 +17,7 @@ NPM Packages used:
 * @react-google-maps/api
 * use-places-autocomplete
 
-Keys APIs used:
+Key APIs used:
 * Geocoding API
 * Maps Javascript API
 * Places API
