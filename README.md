@@ -7,7 +7,8 @@
 ### Tech Stack
 *Just Dump* was built using ReactJS on the front end and Node/Express with MongoDB on the back end.
 
-![mern](./assets/mernstack.png)
+<img src="./assets/mernstack.png" alt="drawing" width="200"/>
+
 
 Keys APIs used:
 * Geocoding API
@@ -17,18 +18,21 @@ Keys APIs used:
 ![fifthpage](./assets/fifthpage.png)
 
 
-### Technical Challenges/Research
-
-
-### Minimum Viable Product (MVP)
-
-
- #### Git Workflow
+### User Story
+* User should be able to search for a bathroom using the search bar.
+* User should be able to
 
 ### Project Setup
+* After cloning this repo, run ```npm install``` from within the root directory of this project.
+* Please create a Google Map API Key, and ensure that the two services below are enabled. Create a file in the root directory called ```config.js```. Copy and paste the following code into the newly created file:
+
+      ```var GOOGLE_MAPS_API_KEY = <YOUR GOOGLE MAP API KEY>;```
+      ```export default GOOGLE_MAPS_API_KEY; ```
+* Run ```npm react-dev`` to bundle webpack which watches for code changes automatically for you.
 
 ### Future Scope
 
 * Users should easily be able to filter restrooms based on their preference
-* Users should be able to
+* Users should be able to share real-time information that translates into current bathroom cleanliness, lines etc.
+* Users should be able able to host their bathroom for free or charge a reasonable price.
 
