@@ -1,7 +1,7 @@
 ## Just Dump
 ![first_page](./assets/thirdpage.png)
 ### About
-*Just Dump* is a web app that allows users to easily find public restrooms near them. My main motivation for developing this app was to make sure everybody, including members of transgender community, have equal access to public restrooms.
+*Just Dump* is a web app that allows users to easily find public restrooms near them. My main motivation for developing this app was to make sure everybody has equal access to public restrooms.
 ![second_page](./assets/fourthpage.png)
 
 ### Tech Stack
@@ -18,7 +18,7 @@ Keys APIs used:
 ![fifthpage](./assets/fifthpage.png)
 
 
-### User Story
+### User Stories
 * User should be able to search for a bathroom using the search bar.
 * User should be able to mark a location once they use a restroom at that location.
 * User should be able to click on a marker and leave a feedback once they use a public restroom at a specific location
@@ -27,9 +27,10 @@ Keys APIs used:
 * After cloning this repo, run ```npm install``` from within the root directory of this project.
 * Please create a Google Map API Key, and ensure that the two services below are enabled. Create a file in the root directory called ```config.js```. Copy and paste the following code into the newly created file:
 
-      ```var GOOGLE_MAPS_API_KEY = <YOUR GOOGLE MAP API KEY>;```
-      ```export default GOOGLE_MAPS_API_KEY; ```
-* Run ```npm react-dev`` to bundle webpack which watches for code changes automatically for you.
+      ```var GOOGLE_MAPS_API_KEY = <YOUR GOOGLE MAP API KEY>;
+         export default GOOGLE_MAPS_API_KEY;```
+
+* Run ```npm react-dev``` to bundle webpack which watches for code changes automatically for you.
 
 ### Future Scope
 
